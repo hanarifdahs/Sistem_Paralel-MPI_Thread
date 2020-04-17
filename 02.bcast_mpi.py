@@ -12,8 +12,10 @@ size = comm.Get_size()
 
 # jika saya rank 0 maka saya akan melakukan broadscast
 if rank == 0:
-   comm.bcast("yuk bisa yuk", root=0)
+    print("rank ", rank, "broadcast")
+    comm.bcast('yuk bisa yuk', root=0)
+
 	
 # jika saya bukan rank 0 maka saya menerima pesan
 else:
-    print ("rank ",rank,comm.bcast(""))
+	print("rank", rank, comm.bcast(""))
